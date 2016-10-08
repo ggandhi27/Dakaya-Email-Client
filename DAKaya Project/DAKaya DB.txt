@@ -1,0 +1,39 @@
+delimiter $$
+
+CREATE DATABASE `dakaya` /*!40100 DEFAULT CHARACTER SET utf8 */$$
+
+
+delimiter $$
+
+CREATE TABLE `information` (
+  `username` varchar(25) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `country` varchar(45) NOT NULL,
+  `dob` varchar(10) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `ques` varchar(100) NOT NULL,
+  `answer` varchar(100) NOT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
+delimiter $$
+
+CREATE TABLE `mails` (
+  `id` int(11) NOT NULL,
+  `sender` varchar(50) DEFAULT NULL,
+  `receiver` varchar(50) DEFAULT NULL,
+  `subject` varchar(200) DEFAULT NULL,
+  `email` varchar(2000) DEFAULT NULL,
+  `date` varchar(10) DEFAULT NULL,
+  `time` varchar(10) DEFAULT NULL,
+  `starred` tinyint(4) DEFAULT NULL,
+  `spam` tinyint(4) DEFAULT NULL,
+  `mread` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
